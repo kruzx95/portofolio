@@ -83,7 +83,7 @@ export default function Hero() {
           }}
         >
           Hi, I&apos;m{" "}
-          <span className="gradient-text-animated">Mallik Rushamidiwinata</span>
+          <span className="gradient-text-animated">Mallik</span>
         </h1>
 
         {/* Typing effect */}
