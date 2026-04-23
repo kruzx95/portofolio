@@ -7,7 +7,7 @@ const projects = [
     title: "Diskominfo Kota Tasikmalaya",
     description:
       "The official website for the Department of Communication and Informatics (Diskominfo) of Tasikmalaya City. Developed to improve performance, user experience, and digitalization of government services.",
-    tags: ["WordPress", "Web Development", "Government"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Government"],
     color: "from-blue-600 to-cyan-500",
     colorLight: "from-blue-50 to-cyan-50",
     emoji: "🏛️",
