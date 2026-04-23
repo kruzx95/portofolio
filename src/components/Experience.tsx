@@ -5,30 +5,40 @@ import { useEffect, useRef, useState } from "react";
 const experiences = [
   {
     type: "work",
-    title: "Full Stack Developer",
-    company: "Freelance",
-    period: "2024 — Present",
-    description:
-      "Building modern web applications for clients using Next.js, React, and Node.js. Focused on creating performant, user-friendly digital experiences.",
-    tags: ["Next.js", "React", "Node.js", "MySQL"],
+    title: "Frontend Developer",
+    company: "Diskominfo Kota Tasikmalaya (Onsite)",
+    period: "January 2024 — Present",
+    bullets: [
+      "Developed websites for multiple institutions using WordPress as an initial digitalization solution.",
+      "Trusted to rebuild the official Diskominfo Kota Tasikmalaya website to improve performance and user experience.",
+      "Implemented modern technologies such as TypeScript and Tailwind CSS in web development.",
+      "Collaborated with internal teams to ensure system requirements aligned with organizational needs.",
+    ],
+    tags: ["WordPress", "TypeScript", "Tailwind CSS"],
   },
   {
     type: "work",
-    title: "Frontend Developer",
-    company: "Project-Based",
-    period: "2023 — 2024",
-    description:
-      "Developed responsive web interfaces and collaborated with teams to deliver high-quality digital products. Specialized in React and modern CSS.",
-    tags: ["React", "Tailwind CSS", "TypeScript"],
+    title: "Human Resources",
+    company: "Kimia Farma Diagnostika Jakarta (Onsite)",
+    period: "2020 - (1 Year)",
+    bullets: [
+      "Managed and updated employee data across multiple branches to ensure accuracy and completeness.",
+      "Collaborated in preparing periodic payroll reports.",
+      "Provided IT support for troubleshooting hardware and network issues.",
+      "Supported operational efficiency through cross-functional coordination.",
+    ],
+    tags: ["HR Management", "Payroll", "IT Support"],
   },
   {
     type: "education",
-    title: "Computer Science",
-    company: "University",
-    period: "2022 — Present",
-    description:
-      "Studying Computer Science with focus on software engineering, data structures, algorithms, and web development technologies.",
-    tags: ["Algorithms", "Data Structures", "Web Dev"],
+    title: "Bachelor of Computer – Information System",
+    company: "Universitas Komputer Indonesia",
+    period: "2014 — 2019",
+    bullets: [
+      "Graduated with GPA 3.09.",
+      "Collaborated with administrative teams to analyze workflow requirements and implemented a web-based SPJ system to improve financial data transparency (Diskominfo Kota Bandung, 2017).",
+    ],
+    tags: ["Information System", "Web Development"],
   },
 ];
 
@@ -61,7 +71,7 @@ export default function Experience() {
         {/* Section header */}
         <div
           className={`text-center mb-16 transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            visible ? "animate-fade-in-up" : ""
           }`}
         >
           <span className="text-sm font-semibold text-accent tracking-widest uppercase">
@@ -89,8 +99,6 @@ export default function Experience() {
               }`}
               style={{
                 animationDelay: `${0.2 + i * 0.15}s`,
-                animationFillMode: "forwards",
-                opacity: 0,
               }}
             >
               {/* Timeline dot */}
@@ -143,9 +151,12 @@ export default function Experience() {
                   <p className="text-sm font-medium text-accent/70 mb-3">
                     {exp.company}
                   </p>
-                  <p className="text-sm text-muted leading-relaxed mb-4">
-                    {exp.description}
-                  </p>
+                  
+                  <ul className="text-sm text-muted leading-relaxed mb-4 list-disc pl-4 space-y-1">
+                    {exp.bullets.map((bullet, idx) => (
+                      <li key={idx}>{bullet}</li>
+                    ))}
+                  </ul>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">

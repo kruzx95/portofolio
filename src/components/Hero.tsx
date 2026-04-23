@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const roles = ["Full Stack Developer", "UI/UX Enthusiast", "Problem Solver"];
+const roles = ["Frontend", "Junior Web Developer", "PC Troubleshooter", "Tech for Government"];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -69,7 +69,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
           </span>
           <span className="text-sm font-medium text-accent">
-            Available for freelance work
+            Frontend Developer based in Tasikmalaya
           </span>
         </div>
 
@@ -77,9 +77,7 @@ export default function Hero() {
         <h1
           className="animate-fade-in-up delay-100 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight"
           style={{
-            fontFamily: "var(--font-heading)",
-            opacity: 0,
-            animationFillMode: "forwards",
+            fontFamily: "var(--font-heading)"
           }}
         >
           Hi, I&apos;m{" "}
@@ -89,7 +87,6 @@ export default function Hero() {
         {/* Typing effect */}
         <div
           className="animate-fade-in-up delay-200 mt-4 h-10 flex items-center justify-center"
-          style={{ opacity: 0, animationFillMode: "forwards" }}
         >
           <span className="text-xl sm:text-2xl text-muted font-light">
             {displayed}
@@ -100,16 +97,13 @@ export default function Hero() {
         {/* Description */}
         <p
           className="animate-fade-in-up delay-300 mt-6 max-w-xl text-lg text-muted leading-relaxed"
-          style={{ opacity: 0, animationFillMode: "forwards" }}
         >
-          I craft clean, performant, and user-friendly digital experiences.
-          Passionate about turning complex problems into elegant solutions.
+          I build responsive and high-performance digital solutions, with a proven track record in modernizing government institution websites. Passionate about translating complex requirements into clean, user-friendly experiences.
         </p>
 
         {/* CTA Buttons */}
         <div
           className="animate-fade-in-up delay-400 mt-10 flex flex-col sm:flex-row gap-4"
-          style={{ opacity: 0, animationFillMode: "forwards" }}
         >
           <a
             href="#projects"
@@ -145,7 +139,6 @@ export default function Hero() {
         {/* Social links */}
         <div
           className="animate-fade-in-up delay-500 mt-12 flex items-center gap-5"
-          style={{ opacity: 0, animationFillMode: "forwards" }}
         >
           {[
             {
@@ -192,7 +185,6 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div
           className="animate-fade-in delay-600 absolute bottom-10 left-1/2 -translate-x-1/2"
-          style={{ opacity: 0, animationFillMode: "forwards" }}
         >
           <a href="#about" className="flex flex-col items-center gap-2 text-muted/50 hover:text-accent/50 transition-colors">
             <span className="text-xs tracking-widest uppercase">Scroll</span>

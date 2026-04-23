@@ -2,55 +2,65 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const skillCategories = [
+const skillsData = [
   {
-    title: "Frontend",
+    name: "Next.js",
+    category: "Framework",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+        <path d="m9 16 6-8" />
       </svg>
     ),
-    description: "Building responsive and interactive user interfaces",
-    skills: [
-      { name: "React / Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "HTML / CSS", level: 95 },
-    ],
+    color: "group-hover:text-black group-hover:bg-white"
   },
   {
-    title: "Backend",
+    name: "TypeScript",
+    category: "Language",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="8" rx="2" />
-        <rect x="2" y="14" width="20" height="8" rx="2" />
-        <circle cx="6" cy="6" r="1" /><circle cx="6" cy="18" r="1" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+        <path d="M4 11l8-8 8 8" />
+        <path d="M4 15l8 8 8-8" />
       </svg>
     ),
-    description: "Server-side logic, APIs, and database management",
-    skills: [
-      { name: "Node.js", level: 80 },
-      { name: "Express", level: 75 },
-      { name: "REST API", level: 85 },
-      { name: "MySQL", level: 70 },
-    ],
+    color: "group-hover:text-blue-600 group-hover:bg-blue-50"
   },
   {
-    title: "Tools & Others",
+    name: "Tailwind CSS",
+    category: "Styling",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+        <path d="M12 2v20" />
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
-    description: "Development tools and workflow optimization",
-    skills: [
-      { name: "Git / GitHub", level: 85 },
-      { name: "Figma", level: 70 },
-      { name: "VS Code", level: 90 },
-      { name: "Linux", level: 65 },
-    ],
+    color: "group-hover:text-cyan-500 group-hover:bg-cyan-50"
   },
+  {
+    name: "MySQL",
+    category: "Database",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+        <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+      </svg>
+    ),
+    color: "group-hover:text-orange-500 group-hover:bg-orange-50"
+  },
+  {
+    name: "PC Troubleshooting",  
+    category: "Hardware & Support",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+        <rect width="14" height="8" x="5" y="2" rx="2" />
+        <rect width="20" height="8" x="2" y="14" rx="2" />
+        <path d="M6 18h2" />
+        <path d="M12 18h6" />
+      </svg>
+    ),
+    color: "group-hover:text-accent group-hover:bg-accent/10"
+  }
 ];
 
 export default function Skills() {
@@ -88,11 +98,11 @@ export default function Skills() {
       <div className="absolute top-20 -right-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-green-100/30 rounded-full blur-3xl" />
 
-      <div className="relative max-w-6xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-6">
         {/* Section header */}
         <div
           className={`text-center mb-16 transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            visible ? "animate-fade-in-up" : ""
           }`}
         >
           <span className="text-sm font-semibold text-accent tracking-widest uppercase">
@@ -106,64 +116,28 @@ export default function Skills() {
           </h2>
           <div className="section-divider mx-auto mt-4" />
           <p className="mt-6 max-w-lg mx-auto text-muted">
-            I&apos;m constantly learning and expanding my skill set. Here are
-            the technologies I use to bring ideas to life.
+            I specialize in building reliable systems, from robust codebases to hardware troubleshooting, ensuring everything runs smoothly.
           </p>
         </div>
 
-        {/* Skill cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, catIndex) => (
+        {/* Skill Cards Grid */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {skillsData.map((skill, index) => (
             <div
-              key={category.title}
-              className={`group p-8 bg-white rounded-2xl border border-border/50 hover:border-accent/20 hover:shadow-xl hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1 card-shine ${
+              key={skill.name}
+              className={`group flex items-center gap-4 p-5 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-1 ${
                 visible ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{
-                animationDelay: `${0.2 + catIndex * 0.15}s`,
-                animationFillMode: "forwards",
-                opacity: 0,
+                animationDelay: `${0.1 + index * 0.1}s`,
               }}
             >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-accent/5 border border-accent/10 flex items-center justify-center text-accent mb-5 group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-300">
-                {category.icon}
+              <div className={`p-3 rounded-xl bg-gray-50 text-muted transition-colors duration-300 ${skill.color}`}>
+                {skill.icon}
               </div>
-
-              <h3
-                className="text-xl font-bold text-foreground mb-2"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                {category.title}
-              </h3>
-
-              <p className="text-sm text-muted mb-6">{category.description}</p>
-
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-sm font-medium text-foreground">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs font-semibold text-accent/70 bg-accent/5 px-2 py-0.5 rounded-full">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-linear-to-r from-accent to-accent-light transition-all duration-1000 ease-out relative"
-                        style={{
-                          width: visible ? `${skill.level}%` : "0%",
-                          transitionDelay: `${0.5 + catIndex * 0.2}s`,
-                        }}
-                      >
-                        {/* Shimmer on the bar */}
-                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-[shimmer_2s_ease-in-out_infinite]" />
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              <div>
+                <h3 className="font-semibold text-foreground text-lg">{skill.name}</h3>
+                <p className="text-xs text-muted/80 uppercase tracking-wider font-medium">{skill.category}</p>
               </div>
             </div>
           ))}

@@ -4,48 +4,26 @@ import { useEffect, useRef, useState } from "react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Diskominfo Kota Tasikmalaya",
     description:
-      "A modern e-commerce platform with product management, shopping cart, and payment integration. Built for seamless online shopping experience.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
-    color: "from-blue-600 to-blue-400",
-    colorLight: "from-blue-50 to-blue-100",
-    emoji: "🛒",
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative task management tool with real-time updates, team boards, and progress tracking to boost productivity.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-    color: "from-blue-500 to-cyan-500",
+      "The official website for the Department of Communication and Informatics (Diskominfo) of Tasikmalaya City. Developed to improve performance, user experience, and digitalization of government services.",
+    tags: ["WordPress", "Web Development", "Government"],
+    color: "from-blue-600 to-cyan-500",
     colorLight: "from-blue-50 to-cyan-50",
-    emoji: "📋",
-    link: "#",
-    github: "#",
+    emoji: "🏛️",
+    link: "https://diskominfo.tasikmalayakota.go.id/",
+    github: null,
   },
   {
-    title: "Portfolio Dashboard",
+    title: "Website DPRD Kota Tasikmalaya",
     description:
-      "An analytics dashboard providing insights on portfolio performance with interactive charts and real-time data visualization.",
-    tags: ["Next.js", "Chart.js", "REST API", "Tailwind"],
+      "The official portal for the Regional People's Representative Council (DPRD) of Tasikmalaya City. Currently in progress, built with modern tech stacks for optimal performance and transparency.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     color: "from-emerald-500 to-green-400",
     colorLight: "from-emerald-50 to-green-50",
-    emoji: "📊",
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Social Media App",
-    description:
-      "A social networking platform with user profiles, feeds, messaging, and content sharing built for modern communities.",
-    tags: ["React", "Express", "MySQL", "Redux"],
-    color: "from-emerald-500 to-teal-500",
-    colorLight: "from-emerald-50 to-teal-50",
-    emoji: "💬",
-    link: "#",
-    github: "#",
+    emoji: "🏗️",
+    link: "#", // In progress
+    github: null,
   },
 ];
 
@@ -79,7 +57,7 @@ export default function Projects() {
         {/* Section header */}
         <div
           className={`text-center mb-16 transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            visible ? "animate-fade-in-up" : ""
           }`}
         >
           <span className="text-sm font-semibold text-accent tracking-widest uppercase">
@@ -93,7 +71,7 @@ export default function Projects() {
           </h2>
           <div className="section-divider mx-auto mt-4" />
           <p className="mt-6 max-w-lg mx-auto text-muted">
-            Here are some of my recent projects. Each one was crafted with care and attention to detail.
+            Here are the projects I am currently working on or have completed. Each one is crafted with care and attention to detail.
           </p>
         </div>
 
@@ -107,8 +85,6 @@ export default function Projects() {
               }`}
               style={{
                 animationDelay: `${0.2 + i * 0.12}s`,
-                animationFillMode: "forwards",
-                opacity: 0,
               }}
             >
               {/* Project preview area */}
@@ -143,24 +119,23 @@ export default function Projects() {
 
                 {/* Hover overlay with links */}
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3.5 bg-white rounded-full text-foreground hover:bg-accent hover:text-white transition-all duration-200 hover:scale-110 shadow-lg"
-                    aria-label="View live"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                    </svg>
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3.5 bg-white rounded-full text-foreground hover:bg-accent hover:text-white transition-all duration-200 hover:scale-110 shadow-lg"
-                    aria-label="View source"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </a>
+                  {project.link !== "#" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3.5 bg-white rounded-full text-foreground hover:bg-accent hover:text-white transition-all duration-200 hover:scale-110 shadow-lg"
+                      aria-label="View live"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white font-medium text-sm">
+                      In Progress 🏗️
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -196,17 +171,15 @@ export default function Projects() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-accent border border-accent/20 rounded-full hover:bg-accent hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20"
+          <button
+            disabled
+            className="group inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-accent/50 border border-accent/10 rounded-full cursor-not-allowed bg-accent/5"
           >
-            View All Projects on GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+            View All Projects on GitHub (Coming Soon)
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </section>

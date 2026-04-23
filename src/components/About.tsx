@@ -107,23 +107,25 @@ export default function About() {
             }`}
           >
             <h3
-              className="text-2xl font-bold text-foreground mb-4"
+              className="text-2xl sm:text-3xl font-bold text-foreground mb-6"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              A passionate developer based in Indonesia 🇮🇩
+              Building digital solutions for government and beyond 🏛️
             </h3>
-            <p className="text-muted leading-relaxed mb-4">
-              I&apos;m a developer who is passionate about building web
-              applications with modern technologies. I enjoy creating
-              clean, efficient, and user-friendly digital experiences
-              that make a real impact.
-            </p>
-            <p className="text-muted leading-relaxed mb-8">
-              When I&apos;m not coding, you can find me exploring new
-              technologies, contributing to open-source projects, or
-              enjoying a good cup of coffee while brainstorming new
-              ideas.
-            </p>
+            <div className="space-y-4 text-muted leading-relaxed mb-8">
+              <p>
+                I am a <strong className="text-foreground font-semibold">Web Developer</strong> with experience in building and developing websites for government institutions. 
+              </p>
+              <p>
+                Proficient in <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-50 text-blue-600 text-sm font-medium mx-1 border border-blue-100 shadow-xs">WordPress</span> and modern technologies such as <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-50 text-blue-600 text-sm font-medium mx-1 border border-blue-100 shadow-xs">TypeScript</span> and <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-green-50 text-green-600 text-sm font-medium mx-1 border border-green-100 shadow-xs">Tailwind CSS</span> to deliver responsive and efficient applications.
+              </p>
+              <div className="relative p-5 mt-6 bg-linear-to-br from-card-bg to-gray-50/50 border border-border rounded-2xl shadow-xs">
+                <div className="absolute -top-3 -left-2 text-4xl text-accent/20">&quot;</div>
+                <p className="relative z-10 italic text-foreground/80 text-sm md:text-base">
+                  Strong collaboration skills, highly adaptable, and solution-oriented, supported by prior experience in Human Resources.
+                </p>
+              </div>
+            </div>
 
             {/* Download CV button */}
             <a
@@ -145,9 +147,7 @@ export default function About() {
                     visible ? "animate-fade-in-up" : "opacity-0"
                   }`}
                   style={{
-                    animationDelay: `${0.4 + i * 0.1}s`,
-                    animationFillMode: "forwards",
-                    opacity: 0,
+                    animationDelay: `${0.4 + i * 0.1}s`
                   }}
                 >
                   <div className="flex items-center gap-3 mb-1">
