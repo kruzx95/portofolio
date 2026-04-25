@@ -15,7 +15,7 @@ const projects = [
     github: null,
   },
   {
-    title: "Website DPRD Kota Tasikmalaya",
+    title: "DPRD Kota Tasikmalaya",
     description:
       "The official portal for the Regional People's Representative Council (DPRD) of Tasikmalaya City. Currently in progress, built with modern tech stacks for optimal performance and transparency.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
